@@ -1,1 +1,10 @@
 - In eventloop/timer.js, what will be the order of execution? Briefly explain the order of execution w.r.t the event loop phases.
+foo
+baz
+foo
+baz
+then the event node execute
+then pending callbacks
+setTimeout()
+2 : bar
+1 : bar

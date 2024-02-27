@@ -1,1 +1,6 @@
 - In eventloop/poll.js, what will be the order of execution? Briefly explain the order of execution w.r.t the event loop phases.
+event loop waits for events in the poll phase
+->foo
+then async operation
+->done
+Read Error

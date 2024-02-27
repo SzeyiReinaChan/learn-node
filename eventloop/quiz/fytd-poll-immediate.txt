@@ -1,2 +1,5 @@
 - Explain the order of execution in terms of the event loop for eventloop/immediate.js.
+fs.readFile callback is executed first. Then setImmediate() callback execute before the setTimeout() callback because, by the time the event loop checks for timer callbacks, the setImmediate() callback would have already been scheduled to run in the check phase immediately following the poll phase.
 - Will the order of execution change if timeout is changed to 0? Why or why not?
+It is not guarantee that the callback will execute before setImmediate()
+setTimeout() callback is scheduled in the timers phase, which will only execute after the poll phase and potentially after the check phase where setImmediate() callbacks are executed.
